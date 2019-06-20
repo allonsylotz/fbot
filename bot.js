@@ -13,9 +13,18 @@ logger.level = 'debug';*/
 
 var regexs = [
   '(can( *)(I|we)( *)get( *)a(n?)( *)F)',
-  '(F( *)(to( *)pay)|for( *)respect(s?))'
+  '(F( *)(to( *)pay)|for( *)respect(s?))',
+  '(F( *)please)'
 ];
 var re = new RegExp(regexs.join('|'), 'i');
+
+var Big_F = [
+  '(can( *)(I|we)( *)get( *)(a|the)( *)biggest( *)F)',
+  '(can( *)(I|we)( *)get( *)(a|the)( *)(big|huge|fat|thicc)( *)F)',
+  '(a( *)moment( *)of( *)silence( *)for( *)our( *)fallen( *)comrade(s?))'
+];
+
+var re2 = new RegExp(Big_F.join('|'), 'i');
 
 var bot = new Discord.Client();
 
@@ -26,7 +35,10 @@ bot.on('ready', () => {
 });*/
 
 bot.on('message', msg => {
-  if (re.test(msg.content)) {
+  if (re2.test(msg.content)) {
+    msg.reply('\nFFFFFF\nFF\nFFFFF\nFF\nFF');
+  }
+  else if (re.test(msg.content)) {
     msg.reply('F');
   }
 });

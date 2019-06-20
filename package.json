@@ -1,9 +1,9 @@
 {
   "name": "F-Bot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Want an F? Need an F? Say so, and F-Bot will give you an F.",
   "main": "bot.js",
-  "author": "Allyson Lotz",
+  "author": "Allyson Lotz, Davis",
   "dependencies": {
     "discord.io": "^2.5.3",
     "discord.js": "^11.5.1",
