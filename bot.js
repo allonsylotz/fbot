@@ -23,8 +23,16 @@ var Big_F = [
   '(can( *)(I|we)( *)get( *)(a|the)( *)(big|huge|fat|thicc)( *)F)',
   '(a( *)moment( *)of( *)silence( *)for( *)our( *)fallen( *)comrade(s?))'
 ];
-
 var re2 = new RegExp(Big_F.join('|'), 'i');
+
+var honk = [
+  '(^y$)',
+  '(((\s|\n)+)y(((\s|\n)+)|$))',
+  '(can( *)(I|we)( *)get( *)a( *)Y)',
+  '(can( *)(I|we)( *)get( *)a( *)honk)',
+  '(Milady, might thou grace us with a HONK of great import\?)'
+];
+var re3 = new RegExp(honk.join('|'), 'i');
 
 var bot = new Discord.Client();
 
@@ -40,6 +48,10 @@ bot.on('message', msg => {
   }
   else if (re.test(msg.content)) {
     msg.reply('F');
+  }
+
+  if (re3.test(msg.content)) {
+    msg.reply('honk');
   }
 });
 
